@@ -1,0 +1,22 @@
+#
+# Export file for libblossom
+#
+# Only the symbols listed in the global section will be callable from
+# applications linking to libblossom.
+#
+
+@PACKAGE@.so
+{
+        global:
+		blossom_open;
+		blossom_read;
+		blossom_send;
+		blossom_close;
+
+		blossom_config_new;
+		blossom_config_read;
+		blossom_config_delete;
+
+        local:
+                *;
+};
