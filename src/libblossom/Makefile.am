@@ -31,6 +31,11 @@ libblossom_la_SOURCES = \
 
 libblossom_la_LDFLAGS = -version-info @SHARED_VERSION_INFO@ @SHLIB_VERSION_ARG@
 
+noinst_PROGRAMS = xini-test
+
+xini_test_SOURCES = xini-test.c
+xini_test_LDADD = libblossom.la
+
 ##TESTS = jhash-test
 ##TESTS = xini-test
 ##TESTS = dictionary-test
@@ -40,4 +45,3 @@ libblossom_la_LDFLAGS = -version-info @SHARED_VERSION_INFO@ @SHLIB_VERSION_ARG@
 ##jhash_test_SOURCES = jhash-test.c jhash.c
 
 ##dictionary_test_SOURCES = dictionary-test.c dictionary.c x_tree.c jhash.c
-##xini_test_SOURCES = xini.c xini.h xini-test.c
