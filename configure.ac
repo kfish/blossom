@@ -133,8 +133,6 @@ doc/Doxyfile
 include/Makefile
 include/blossom/Makefile
 src/Makefile
-src/libjhash/Makefile
-src/datatypes/Makefile
 src/libblossom/Makefile
 src/libblossom/Version_script
 src/tools/Makefile
@@ -164,13 +162,3 @@ AC_MSG_RESULT([
 
 
 fi
-
-ifelse(dnl
-
- Do not edit or modify anything in this comment block.
- The following line is a file identity tag for the GNU Arch
- revision control system.
-
- arch-tag: 3A33C683-BF89-11D8-934A-000A95C7E2B6
-
-)dnl
