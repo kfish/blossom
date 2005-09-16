@@ -167,8 +167,8 @@ target_cpu = @target_cpu@
 target_os = @target_os@
 target_vendor = @target_vendor@
 
-#SUBDIRS = libjhash datatypes libblossom tools examples tests
-SUBDIRS = libjhash datatypes libblossom tools cgi-bin
+#SUBDIRS = libblossom tools examples tests
+SUBDIRS = libblossom tools cgi-bin
 all: all-recursive
 
 .SUFFIXES:

@@ -51,18 +51,20 @@ CONFIG_CLEAN_FILES = Version_script
 am__installdirs = "$(DESTDIR)$(libdir)"
 libLTLIBRARIES_INSTALL = $(INSTALL)
 LTLIBRARIES = $(lib_LTLIBRARIES)
-libblossom_la_DEPENDENCIES = $(top_builddir)/src/libjhash/libjhash.a \
-	$(top_builddir)/src/datatypes/libdatatypes.a
+libblossom_la_LIBADD =
 am_libblossom_la_OBJECTS = blossom.lo config.lo datestamp.lo \
-	flavour.lo input.lo path.lo template.lo xini.lo
+	dictionary.lo flavour.lo input.lo jhash.lo path.lo template.lo \
+	xini.lo x_tree.lo
 libblossom_la_OBJECTS = $(am_libblossom_la_OBJECTS)
 DEFAULT_INCLUDES = -I. -I$(srcdir) -I$(top_builddir)
 depcomp = $(SHELL) $(top_srcdir)/depcomp
 am__depfiles_maybe = depfiles
 @AMDEP_TRUE@DEP_FILES = ./$(DEPDIR)/blossom.Plo ./$(DEPDIR)/config.Plo \
-@AMDEP_TRUE@	./$(DEPDIR)/datestamp.Plo ./$(DEPDIR)/flavour.Plo \
-@AMDEP_TRUE@	./$(DEPDIR)/input.Plo ./$(DEPDIR)/path.Plo \
-@AMDEP_TRUE@	./$(DEPDIR)/template.Plo ./$(DEPDIR)/xini.Plo
+@AMDEP_TRUE@	./$(DEPDIR)/datestamp.Plo \
+@AMDEP_TRUE@	./$(DEPDIR)/dictionary.Plo ./$(DEPDIR)/flavour.Plo \
+@AMDEP_TRUE@	./$(DEPDIR)/input.Plo ./$(DEPDIR)/jhash.Plo \
+@AMDEP_TRUE@	./$(DEPDIR)/path.Plo ./$(DEPDIR)/template.Plo \
+@AMDEP_TRUE@	./$(DEPDIR)/x_tree.Plo ./$(DEPDIR)/xini.Plo
 COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
 	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
 LTCOMPILE = $(LIBTOOL) --mode=compile $(CC) $(DEFS) \
@@ -193,7 +195,10 @@ INCLUDES = -I$(top_srcdir)/src/libjhash -I$(top_srcdir)/src/datatypes
 EXTRA_DIST = Version_script.in
 noinst_HEADERS = \
 	private.h \
-	xini.h
+	jhash.h \
+	dictionary.h \
+	xini.h \
+	x_tree.h
 
 
 # Libraries to build
@@ -202,17 +207,16 @@ libblossom_la_SOURCES = \
 	blossom.c \
 	config.c \
 	datestamp.c \
+	dictionary.c \
 	flavour.c \
 	input.c \
+	jhash.c \
 	path.c \
 	template.c \
-	xini.c
+	xini.c \
+	x_tree.c
 
 libblossom_la_LDFLAGS = -version-info @SHARED_VERSION_INFO@ @SHLIB_VERSION_ARG@
-libblossom_la_LIBADD = \
-	$(top_builddir)/src/libjhash/libjhash.a \
-	$(top_builddir)/src/datatypes/libdatatypes.a
-
 all: all-am
 
 .SUFFIXES:
@@ -287,10 +291,13 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/blossom.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/config.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/datestamp.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/dictionary.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/flavour.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/input.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/jhash.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/path.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/template.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/x_tree.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/xini.Plo@am__quote@
 
 .c.o:
