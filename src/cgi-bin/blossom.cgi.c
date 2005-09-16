@@ -13,7 +13,7 @@ main (int argc, char * argv[])
   char buf[BUFFER_LEN];
   ssize_t n;
 
-  path = getenv ("PATH_TRANSLATED");
+  path = getenv ("PATH_INFO");
 
   config = blossom_config_new ();
   blossom_config_read (config, "/tmp/blossom.ini");
