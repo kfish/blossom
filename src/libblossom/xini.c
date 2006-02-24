@@ -504,8 +504,6 @@ xini_slurp_quoted (XiniParser * parser)
 
   if (xini_cin (c, X_SQUOTE)) quote = X_SQUOTE;
 
-  if (!xini_assert_and_pass (parser, quote)) return NULL;
-
   if ((ret = xini_slurp_to (parser, quote, X_NONE)) == NULL) {
     return NULL;
   } else if (!xini_assert_and_pass (parser, quote)) {
@@ -535,7 +533,7 @@ xini_parse_assignment (XiniParser * parser)
 {
   char c, * name, * value;
 
-  if (!parser->active) return NULL;
+  if (!parser->active) return -1;
 
   name = xini_slurp_to (parser, X_WHITESPACE | X_EQUAL, X_COMMENT | X_NEWLINE);
 
@@ -543,7 +541,7 @@ xini_parse_assignment (XiniParser * parser)
   printf ("xini_parse_assignment: got name (%s)\n", name);
 #endif
 
-  if (name == NULL) return NULL;
+  if (name == NULL) return -1;
 
   xini_skip_whitespace (parser);
 
@@ -596,22 +594,22 @@ xini_parse_section (XiniParser * parser)
 {
   char * section;
 
-  if (!parser->active) return NULL;
+  if (!parser->active) return -1;
 
-  if (!xini_assert_and_pass (parser, X_LBRACKET)) return NULL;
+  if (!xini_assert_and_pass (parser, X_LBRACKET)) return -1;
 
   if ((section = xini_slurp_to (parser, X_RBRACKET,
 				X_COMMENT | X_NEWLINE)) == NULL) {
 #ifdef DEBUG
     printf ("xini_parse_section: FAILED\n");
 #endif
-    return NULL;
+    return -1;
   } else if (!xini_assert_and_pass (parser, X_RBRACKET)) {
 #ifdef DEBUG
     printf ("xini_parse_section: did not get ]\n");
 #endif
     free (section);
-    return NULL;
+    return -1;
   }
 
   if (parser->section) {
