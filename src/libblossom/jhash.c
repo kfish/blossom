@@ -270,11 +270,3 @@ register ub4  initval;  /* the previous hash, or an arbitrary value */
    /*-------------------------------------------- report the result */
    return c;
 }
-
-/*
-** Do not edit or modify anything in this comment block.
-** The following line is a file identity tag for the GNU Arch
-** revision control system.
-**
-** arch-tag: 09C70FFE-BF88-11D8-A85E-000A95C7E2B6
-*/

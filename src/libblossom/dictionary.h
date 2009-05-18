@@ -11,11 +11,3 @@ const char * dictionary_lookup (Dictionary * table, const char * name);
 int dictionary_delete (Dictionary * table);
 
 #endif /* __DICTIONARY_H__ */
-
-/*
-** Do not edit or modify anything in this comment block.
-** The following line is a file identity tag for the GNU Arch
-** revision control system.
-**
-** arch-tag: 09833823-BF88-11D8-ADE7-000A95C7E2B6
-*/

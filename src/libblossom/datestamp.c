@@ -53,11 +53,3 @@ blossom_datestamp (Blossom * blossom, time_t clock)
 
   return 0;
 } 
-
-/*
-** Do not edit or modify anything in this comment block.
-** The following line is a file identity tag for the GNU Arch
-** revision control system.
-**
-** arch-tag: 09995113-BF88-11D8-9D22-000A95C7E2B6
-*/

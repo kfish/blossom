@@ -88,11 +88,3 @@ ub4 jenkins_hash2(ub4 * k, ub4 length, ub4 initval);
 ub4 jenkins_hash3(ub1 * k, ub4 length, ub4 initval);
 
 #endif /* __JHASH_H__ */
-
-/*
-** Do not edit or modify anything in this comment block.
-** The following line is a file identity tag for the GNU Arch
-** revision control system.
-**
-** arch-tag: 09C98F90-BF88-11D8-8161-000A95C7E2B6
-*/

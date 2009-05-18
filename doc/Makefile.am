@@ -70,9 +70,3 @@ uninstall-local:
 clean-local:
 	if test -d libblossom; then rm -rf libblossom; fi
 	if test -f doxygen-build.stamp; then rm -f doxygen-build.stamp; fi
-
-## Do not edit or modify anything in this comment block.
-## The following line is a file identity tag for the GNU Arch
-## revision control system.
-##
-## arch-tag: 49F281F6-BF88-11D8-9362-000A95C7E2B6

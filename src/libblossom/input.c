@@ -118,12 +118,3 @@ blossom_input_next (Blossom * blossom)
 
   return blossom_input_open_current (blossom);
 }
-
-
-/*
-** Do not edit or modify anything in this comment block.
-** The following line is a file identity tag for the GNU Arch
-** revision control system.
-**
-** arch-tag: 09A22CB2-BF88-11D8-BC5F-000A95C7E2B6
-*/

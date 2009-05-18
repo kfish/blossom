@@ -100,11 +100,3 @@ int xini_read_fd (int fd,
 		  XiniAssign assign, void * assign_user_data);
 
 #endif /* __XINI_H__ */
-
-/*
-** Do not edit or modify anything in this comment block.
-** The following line is a file identity tag for the GNU Arch
-** revision control system.
-**
-** arch-tag: 09BD2BC0-BF88-11D8-8292-000A95C7E2B6
-*/

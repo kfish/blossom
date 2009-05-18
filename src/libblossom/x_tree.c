@@ -361,11 +361,3 @@ x_tree_free (x_tree_t * tree)
 {
   x_tree_free_with (tree, x_free);
 }
-
-/*
-** Do not edit or modify anything in this comment block.
-** The following line is a file identity tag for the GNU Arch
-** revision control system.
-**
-** arch-tag: 09879AF5-BF88-11D8-A27D-000A95C7E2B6
-*/

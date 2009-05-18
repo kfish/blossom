@@ -698,11 +698,3 @@ xini_read (char * path,
 
   return 0;
 }
-
-/*
-** Do not edit or modify anything in this comment block.
-** The following line is a file identity tag for the GNU Arch
-** revision control system.
-**
-** arch-tag: 09B8E2B4-BF88-11D8-A8F4-000A95C7E2B6
-*/

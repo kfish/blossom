@@ -64,11 +64,3 @@ blossom_config_delete (BlossomConfig * config)
   free (config);
   return 0;
 }
-
-/*
-** Do not edit or modify anything in this comment block.
-** The following line is a file identity tag for the GNU Arch
-** revision control system.
-**
-** arch-tag: 09942546-BF88-11D8-AC4D-000A95C7E2B6
-*/

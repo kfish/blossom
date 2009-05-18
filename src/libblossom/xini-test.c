@@ -33,11 +33,3 @@ main (int argc, char * argv[])
   
   exit (0);
 }
-
-/*
-** Do not edit or modify anything in this comment block.
-** The following line is a file identity tag for the GNU Arch
-** revision control system.
-**
-** arch-tag: 09B4B282-BF88-11D8-98C7-000A95C7E2B6
-*/

@@ -59,11 +59,3 @@ blossom_get_content_type (Blossom * blossom)
 {
   return blossom->content_type;
 }
-
-/*
-** Do not edit or modify anything in this comment block.
-** The following line is a file identity tag for the GNU Arch
-** revision control system.
-**
-** arch-tag: 099004F2-BF88-11D8-B8CA-000A95C7E2B6
-*/

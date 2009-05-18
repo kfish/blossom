@@ -127,11 +127,3 @@ BlossomTemplate blossom_template_next (Blossom * blossom);
 size_t blossom_template_read (Blossom * blossom, char * buf, size_t nbytes);
 
 #endif /* __BLOSSOM_PRIVATE_H__ */
-
-/*
-** Do not edit or modify anything in this comment block.
-** The following line is a file identity tag for the GNU Arch
-** revision control system.
-**
-** arch-tag: 09AAF7F9-BF88-11D8-B909-000A95C7E2B6
-*/

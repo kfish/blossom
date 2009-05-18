@@ -108,11 +108,3 @@ blossom_path_open (Blossom * blossom, const char * path)
 
   return 0;
 }
-
-/*
-** Do not edit or modify anything in this comment block.
-** The following line is a file identity tag for the GNU Arch
-** revision control system.
-**
-** arch-tag: 09A6CCC2-BF88-11D8-9D29-000A95C7E2B6
-*/

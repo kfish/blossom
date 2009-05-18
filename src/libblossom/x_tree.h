@@ -81,11 +81,3 @@ x_tree_t *
 x_tree_free_with (x_tree_t * tree, x_free_t free_func);
 
 #endif /* __X_TREE_H__ */
-
-/*
-** Do not edit or modify anything in this comment block.
-** The following line is a file identity tag for the GNU Arch
-** revision control system.
-**
-** arch-tag: 098BC48A-BF88-11D8-A816-000A95C7E2B6
-*/

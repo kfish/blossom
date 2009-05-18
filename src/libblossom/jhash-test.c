@@ -186,11 +186,3 @@ int main (int argc, char * argv[])
 }
 
 #endif  /* SELF_TEST */
-
-/*
-** Do not edit or modify anything in this comment block.
-** The following line is a file identity tag for the GNU Arch
-** revision control system.
-**
-** arch-tag: 09C179C3-BF88-11D8-A46B-000A95C7E2B6
-*/
