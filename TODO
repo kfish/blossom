@@ -7,3 +7,9 @@ Template files
 	* install default template files
 	* load default template files if none specified (ie. set up default
 	config before overriding with user config)
+
+Benchmarking
+	* generate large blog archive (lorem ipsum?) with 1000s of entries
+	* time generation of all html files in archive
+	* do similar timing using blosxom, pyblosxom etc.
+	* graph times: n entries vs. generation time for each system
