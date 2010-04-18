@@ -2,3 +2,8 @@ This is a loosely-categorized list of outstanding tasks and ideas for improving
 blossom. When implementing any of these, please include an update to this TODO
 file removing that task, in the same commit.
 
+Template files
+	* include example template files
+	* install default template files
+	* load default template files if none specified (ie. set up default
+	config before overriding with user config)
