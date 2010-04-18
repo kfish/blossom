@@ -30,7 +30,7 @@ main (int argc, char * argv[])
 
   if (status == -1) {
     fprintf (stderr, "%s: error reading %s\n", progname, DEFAULT_INI_FILE);
-    exit (1);
+    goto exit_err;
   }
 
   blossom = blossom_open (config, path, "html");
@@ -44,5 +44,11 @@ main (int argc, char * argv[])
 
   blossom_close (blossom);
 
+  blossom_config_delete (config);
+
   return 0;
+
+exit_err:
+  blossom_config_delete (config);
+  return 1;
 }
