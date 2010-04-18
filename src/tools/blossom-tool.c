@@ -4,14 +4,20 @@
 
 #define BUFFER_LEN 12
 
+#define DEFAULT_INI_FILE "/tmp/blossom.ini"
+
 int
 main (int argc, char * argv[])
 {
   BlossomConfig * config;
   Blossom * blossom;
+  char * progname;
   char * path;
   char buf[BUFFER_LEN];
   ssize_t n;
+  int status;
+
+  progname = argv[0];
 
   if (argc < 2) {
     path = NULL;
@@ -20,7 +26,12 @@ main (int argc, char * argv[])
   }
 
   config = blossom_config_new ();
-  blossom_config_read (config, "/tmp/blossom.ini");
+  status = blossom_config_read (config, DEFAULT_INI_FILE);
+
+  if (status == -1) {
+    fprintf (stderr, "%s: error reading %s\n", progname, DEFAULT_INI_FILE);
+    exit (1);
+  }
 
   blossom = blossom_open (config, path, "html");
 
