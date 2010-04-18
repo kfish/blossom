@@ -9,6 +9,9 @@ blossom_open (BlossomConfig * config, const char * path, const char * flavour)
 {
   Blossom * blossom = NULL;
 
+  if (path == NULL)
+	  path = getcwd(NULL, 0);
+
   blossom = (Blossom *) malloc (sizeof (Blossom));
 
   /* Attach config */
