@@ -106,5 +106,7 @@ blossom_path_open (Blossom * blossom, const char * path)
     free (new_path);
   }
 
+  closedir (dir);
+
   return 0;
 }

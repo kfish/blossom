@@ -110,6 +110,7 @@ struct _Blossom {
 int blossom_datestamp (Blossom * blossom, time_t clock);
 
 int blossom_input_init (Blossom * blossom, const char * path);
+int blossom_input_delete (Blossom * blossom);
 
 int blossom_input_insert (Blossom * blossom, const char * path,
 			  const struct stat * statbuf);

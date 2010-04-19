@@ -36,14 +36,6 @@ blossom_input_cmp (BlossomInput * bi1, BlossomInput * bi2)
   else return (bi1->mtime_sec > bi2->mtime_sec);
 }
 
-static int
-blossom_input_free (BlossomInput * bi)
-{
-  free (bi);
-
-  return 0;
-}
-
 int
 blossom_input_init (Blossom * blossom, const char * path)
 {
@@ -55,6 +47,15 @@ blossom_input_init (Blossom * blossom, const char * path)
   blossom->input_offset = 0;
 
   blossom_path_open (blossom, blossom->path);
+
+  return 0;
+}
+
+int
+blossom_input_delete (Blossom * blossom)
+{
+  x_tree_free_with (blossom->input_files, free);
+  free (blossom->path);
 
   return 0;
 }

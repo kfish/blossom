@@ -59,6 +59,8 @@ blossom_template_find (Blossom * blossom, const char * template_name,
     free (template_base);
     return template_path;
   }
+  free (template_path);
+  template_path = NULL;
 
   while (*scanpath) {
     if ((sep = rindex (scanpath, '/')) != NULL) {
@@ -77,6 +79,8 @@ blossom_template_find (Blossom * blossom, const char * template_name,
   
   free (scanpath);
   free (template_base);
+  free (template_path);
+
   return NULL;
 }
 

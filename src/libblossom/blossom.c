@@ -8,9 +8,10 @@ Blossom *
 blossom_open (BlossomConfig * config, const char * path, const char * flavour)
 {
   Blossom * blossom = NULL;
+  const char * p = path;
 
   if (path == NULL)
-	  path = getcwd(NULL, 0);
+	  p = getcwd(NULL, 0);
 
   blossom = (Blossom *) malloc (sizeof (Blossom));
 
@@ -20,8 +21,11 @@ blossom_open (BlossomConfig * config, const char * path, const char * flavour)
   /* Initialize */
   blossom->dictionary = dictionary_new ();
 
-  blossom_input_init (blossom, path);
+  blossom_input_init (blossom, p);
   blossom_flavour_init (blossom, flavour);
+
+  if (path == NULL)
+	  free (p);
 
   return blossom;
 }
@@ -52,6 +56,9 @@ blossom_read (Blossom * blossom, char * buf, size_t count)
 int
 blossom_close (Blossom * blossom)
 {
+  dictionary_delete (blossom->dictionary);
+  blossom_input_delete (blossom);
+  blossom_flavour_free (blossom);
   free (blossom);
 
   return 0;
