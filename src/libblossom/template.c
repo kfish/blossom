@@ -17,7 +17,7 @@ blossom_template_set (Blossom * blossom, BlossomTemplate template)
 {
   blossom->template_current = template;
 
-  if (template == BLOSSOM_TEMPLATE_END)
+  if (template == BLOSSOM_TEMPLATE_END || blossom->template_files[template] == NULL)
     blossom->template_fd = -1;
   else
     blossom->template_fd = open (blossom->template_files[template], O_RDONLY);

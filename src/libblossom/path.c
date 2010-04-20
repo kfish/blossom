@@ -20,7 +20,7 @@ blossom_path_new (const char * path1, const char * path2)
 
   s = new_path = (char *) malloc (len);
 
-  if (path1) {
+  if (path1 && l1>0) {
     strncpy (s, path1, l1);
     s += l1;
 
@@ -34,7 +34,7 @@ blossom_path_new (const char * path1, const char * path2)
     s++;
   }
 
-  if (path2) {
+  if (path2 && l2>0) {
     strncpy (s, path2, l2);
     s += l2;
   }

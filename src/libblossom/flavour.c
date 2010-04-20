@@ -99,6 +99,8 @@ blossom_slurp_content_type (Blossom * blossom)
 #endif
 
   path = blossom->template_files[BLOSSOM_TEMPLATE_CONTENT_TYPE];
+  if (path == NULL)
+    return -1;
 
   if (stat (path, &statbuf) == -1)
     return -1;
